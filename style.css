@@ -1,0 +1,40 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #f2e7ff;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+main.container {
+  width: 450px;
+  background-color: white;
+  height: 100%;
+  margin: 80px auto;
+  padding-top: 2em;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media all and (max-width:414px) {
+  main.container {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 414px) {
+  body {
+    background-color: white;
+  }
+}
