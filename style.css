@@ -17,16 +17,26 @@ body {
 
 
 .parallax {
-    background: url('Website-Design-Background.png') no-repeat fixed;
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 700px;
+  background: url('design3.png') no-repeat fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 700px;
 }
 
-.wrapper{
+.parallax2 {
+  background: url('design4.png') no-repeat fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 500px;
+}
+
+.wrapper {
   padding-right: 100px;
   padding-left: 100px;
   display: flex;
@@ -35,13 +45,13 @@ body {
   flex-wrap: wrap;
 }
 
-.main-about{
+.main-about {
   padding: 40px 100px 20px 100px;
 }
 
 img.curve {
-  -webkit-shape-outside:url(https://media.licdn.com/dms/image/C5603AQE5IRiFUG6Gyg/profile-displayphoto-shrink_100_100/0?e=1539216000&v=beta&t=u3j1suZySxf0iyBr84teNZsHp7wBBsyFNvA-L--6BPg);
-  border-radius:50%;
+  -webkit-shape-outside: url(https://media.licdn.com/dms/image/C5603AQE5IRiFUG6Gyg/profile-displayphoto-shrink_100_100/0?e=1539216000&v=beta&t=u3j1suZySxf0iyBr84teNZsHp7wBBsyFNvA-L--6BPg);
+  border-radius: 50%;
   width: 220px;
   height: 220px;
   float: left;
@@ -51,65 +61,92 @@ img.curve {
   border-width: thin;
 }
 
-.about{
-
+.contact-info {
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
-.contact-info{
-display: flex;
-justify-content: center;
-margin-left:100px;
-margin-right: 100px;
-}
-
-.contact-column{
+.contact-column {
   display: flex;
   max-width: fit-content;
   justify-content: center;
   flex-direction: column;
- /* background-color: white;*/
+  /* background-color: white;*/
   padding: 10px;
   border-radius: 10px;
 }
 
-
-a {
-  color:white;
+.contact-title,
+.button-wrapper {
+  align-self: center;
 }
 
 
+/*Margin for the buttons
+*/
 
-.contact-title, .button-wrapper{
-  align-self:center;
-}
-
-.override{
+.override {
   margin: 5px;
 }
 
-.override:hover{
-  color:black;
+.collapse-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
+#collapse-linkedin {
+  margin-left: 420px;
+}
 
-.contact-title{
-  font-size: 23px;
+.card-override {
+  max-width: fit-content;
+  padding: 5px;
+}
+
+a {
   color: black;
 }
 
-p{
-  padding-left:10px;
+p {
+  padding-left: 10px;
   margin: 0;
 }
 
-p.about.text{
+p.about.text {
   padding: 0px 10px 0px 10px;
-  font-size:15px;
+  font-size: 15px;
   text-align: left;
-  margin:0;
+  margin: 0;
 }
 
-.wrapper-columns{
+.skills-col {
+  color: grey;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  display: block;
+}
+
+.skill-item {
+  display: inline-block;
+  width: 8rem;
+  padding: 10px;
+  margin: 10px;
+  background: white;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.wrapper-columns {
   padding-right: 100px;
   padding-left: 100px;
   display: flex;
@@ -118,11 +155,13 @@ p.about.text{
   flex-direction: column;
 }
 
-h4{
-  margin-top:10px;
+#skills {
+  margin-top: 10px;
+  text-align: center;
+  color: white;
 }
 
-.col-md-7{
+.col-md-7 {
   padding-top: 20px;
   padding-bottom: 20px;
   border-width: solid;
@@ -130,26 +169,25 @@ h4{
   border-style: solid;
   border-radius: 3em;
   height: 80%;
-  margin:30px 0px 5px 15px;
+  margin: 30px 0px 5px 15px;
   background-color: white;
   opacity: 0.7;
 }
 
-@media (max-width: 1150px){
-#bootstrap-override {
+@media (max-width: 1150px) {
+  .button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #bootstrap-override {
     -ms-flex: 0;
     flex: auto;
     max-width: fit-content;
     width: auto;
+  }
+  #collapse-linkedin {
+    margin-left: 0px;
+  }
 }
-}
-
-@media (max-width: 1150px){
-.button-wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-}
-
