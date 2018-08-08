@@ -9,32 +9,147 @@ html {
 }
 
 body {
-  margin: 0;
+  margin-bottom: 50px;
+  padding-top: 50px;
   color: #244751;
-  background-color: #f2e7ff;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-main.container {
-  width: 450px;
-  background-color: white;
-  height: 100%;
-  margin: 80px auto;
-  padding-top: 2em;
+
+.parallax {
+    background: url('Website-Design-Background.png') no-repeat fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 700px;
+}
+
+.wrapper{
+  padding-right: 100px;
+  padding-left: 100px;
   display: flex;
-  justify-content: center;
-  align-content: flex-start;
+  justify-content: space-evenly;
+  align-items: center;
   flex-wrap: wrap;
 }
 
-@media all and (max-width:414px) {
-  main.container {
-    width: 100%;
-  }
+.main-about{
+  padding: 40px 100px 20px 100px;
 }
 
-@media all and (max-width: 414px) {
-  body {
-    background-color: white;
-  }
+img.curve {
+  -webkit-shape-outside:url(https://media.licdn.com/dms/image/C5603AQE5IRiFUG6Gyg/profile-displayphoto-shrink_100_100/0?e=1539216000&v=beta&t=u3j1suZySxf0iyBr84teNZsHp7wBBsyFNvA-L--6BPg);
+  border-radius:50%;
+  width: 220px;
+  height: 220px;
+  float: left;
+  border: 5px;
+  border-color: lightgrey;
+  border-style: solid;
+  border-width: thin;
 }
+
+.about{
+
+}
+
+.contact-info{
+display: flex;
+justify-content: center;
+margin-left:100px;
+margin-right: 100px;
+}
+
+.contact-column{
+  display: flex;
+  max-width: fit-content;
+  justify-content: center;
+  flex-direction: column;
+ /* background-color: white;*/
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+a {
+  color:white;
+}
+
+
+
+.contact-title, .button-wrapper{
+  align-self:center;
+}
+
+.override{
+  margin: 5px;
+}
+
+.override:hover{
+  color:black;
+}
+
+
+.contact-title{
+  font-size: 23px;
+  color: black;
+}
+
+p{
+  padding-left:10px;
+  margin: 0;
+}
+
+p.about.text{
+  padding: 0px 10px 0px 10px;
+  font-size:15px;
+  text-align: left;
+  margin:0;
+}
+
+.wrapper-columns{
+  padding-right: 100px;
+  padding-left: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+h4{
+  margin-top:10px;
+}
+
+.col-md-7{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-width: solid;
+  border-color: lightgrey;
+  border-style: solid;
+  border-radius: 3em;
+  height: 80%;
+  margin:30px 0px 5px 15px;
+  background-color: white;
+  opacity: 0.7;
+}
+
+@media (max-width: 1150px){
+#bootstrap-override {
+    -ms-flex: 0;
+    flex: auto;
+    max-width: fit-content;
+    width: auto;
+}
+}
+
+@media (max-width: 1150px){
+.button-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+}
+
