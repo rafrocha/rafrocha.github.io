@@ -25,37 +25,29 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#main">About <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link" href="#projects">
           Projects
         </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Bendito</a>
-            <a class="dropdown-item" href="#">Tiny App</a>
-            <a class="dropdown-item" href="#">Oinker</a>
-          </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Skills</a>
+          <a class="nav-link" href="#education">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Experience</a>
+          <a class="nav-link" href="#experience">Experience</a>
         </li>
       </ul>
     </div>
   </nav>
   <div class="container-fluid parallax">
-    <div class="row wrapper main-about">
+    <div id="main" class="row wrapper main-about">
       <div id="bootstrap-override" class="col-md-2">
         <img src="Profile.png" class="curve">
       </div>
       <div id="bootstrap-override" class="col-md-7">
-        <p class="about text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+        <p class="about-text">A junior Web developer with a drive to solve problems. My background has enabled me to smoothly adapt when transitioning between working independently and working as part of a team. Efficiency combined with solutions that anticipate future needs have been my focus since starting this journey. As a true Brazilian, I love playing sports when away form the keyboard. </p>
       </div>
     </div>
     <div class="row contact-info">
@@ -85,19 +77,9 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="wrapper-columns">
-      <div class="col-md-12">
-        <h4 id="projects">Projects</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      </div>
-    </div>
-  </div>
-  <div class="row parallax2">
     <div class="wrapper-columns skills-col">
       <div class="col-md-12">
-        <h4 id="skills">Skills</h4>
+        <h4 class="tags-title" id="skills">Skills</h4>
         <ul class="skill-list">
           <li class="skill-item"> Bootstrap </li>
           <li class="skill-item"> Git </li>
@@ -117,34 +99,121 @@
         </ul>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="wrapper-columns">
-      <div class="col-md-12">
-        <h4 id="education">Education</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <div id="projects" class="row">
+      <div class="wrapper-columns-projects">
+        <div class="col-md-12">
+          <h4 class="tags-title">Projects</h4>
+          <ul class="projects-container">
+            <li class="chatty">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://github.com/rafrocha/ChattyApp/blob/master/build/FirstUsers.png?raw=true" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Chatty</h5>
+                  <p class="card-text">Multi-user messaging client built using React with a Node and Express server backend Development focused on implementing WebSockets and the React framework.</p>
+                  <a href="https://github.com/rafrocha/ChattyApp" class="btn btn-dark">Github Repo</a>
+                </div>
+              </div>
+            </li>
+            <li class="bendito">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="Bendito-shot.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Bendito</h5>
+                  <p class="card-text">A responsive, team-built food-ordering and order management application that communicates with clients via SMS. Stack: JS, PSQL, Express, Twilio, Ajax, jQuery and HTML/CSS/SASS.</p>
+                  <a href="http://bendito.herokuapp.com/" class="btn btn-dark">Visit Heroku app</a>
+                </div>
+              </div>
+            </li>
+            <li class="oinker">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top img-fluid" src="https://raw.githubusercontent.com/rafrocha/tweeter/master/Screenshots-Oinker/Mobile%20delete%20button%20appearing%20with%20box.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Oinker</h5>
+                  <p class="card-text">Single-page Twitter clone built using HTML, CSS, JavaScript, jQuery, and AJAX on the front-end, and Node, Express, and MongoDB on the back-end. Development focused on database integration.</p>
+                  <a href="http://oinkerapp.herokuapp.com/" class="btn btn-dark">Visit Heroku app</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+<!--     <div id="education" class="row">
+      <div class="wrapper-columns experience">
+        <div class="col-md-12">
+          <h4 class="tags-title">Education</h4>
+          <div class="ey">
+            <h5 class="experience-company">LIGHTHOUSE LABS</h5>
+            <p class="experience-title"> Web Development Bootcamp - July 2018 to Aug 2018</p>
+            <p class="description">
+              Full-Time Immersive Web Development Bootcamp Lighthouse Labs Jan. 2018 to Feb.</p>
+          </div>
+          <div class="ey">
+            <h5 class="experience-company">LIGHTHOUSE LABS</h5>
+            <p class="experience-title"> Front-end Fundamentals Course - Jan 2018 to Feb 2018</p>
+            <p class="description">
+              Part-time Front-end focused Course.</p>
+          </div>
+          <div class="ey">
+            <h5 class="experience-company">BCIT</h5>
+            <p class="experience-title"> Financial Management - Apr 2015 to Apr 2017</p>
+            <p class="description">
+              Full-time Certificate Finance and Accounting 2017.</p>
+          </div>
+          <div class="ey">
+            <h5 class="experience-company">PUCRS</h5>
+            <p class="experience-title"> Bachelor's Degree - Jan 2009 to Dec 2013</p>
+            <p class="description">
+              Business Administration with a minor in computer science.</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div id="experience" class="row">
+      <div class="wrapper-columns experience">
+        <div class="col-md-12">
+          <h4 class="tags-title" id="experience">Experience</h4>
+          <div class="scotiabank">
+            <h5 class="experience-company">THE BANK OF NOVA SCOTIA</h5>
+            <p class="experience-title"> Financial Advisor - June 2017 to Jan 2018 - Vancouver, BC</p>
+            <p class="description">
+              Working mostly at the main Downtown Vancouver branch, this experience was heavily focused on client relationship and working independently while focusing on the overall district sales goals.
+              <br>Built a solid customer portfolio with over 100 foreign students/workers prospected through personal connections.
+            </p>
+            <p class="experience-title"> Customer Service Representative - May 2015 to June 2017 - Vancouver, BC</p>
+            <p class="description">
+              While attending school at BCIT, I became senior representative, providing feedback and training to new tellers.
+              <br>Worked as a foreign recruiter for newly arrived potential customers, establishing more than 200 new successful referrals.</p>
+          </div>
+          <div class="ey">
+            <h5 class="experience-company">ERNST & YOUNG (EY)</h5>
+            <p class="experience-title"> IT Auditor & Consultant - Aug 2012 to Aug 2014 - Brazil</p>
+            <p class="description">
+              Worked as a consultant/auditor on projects with multinational companies of various market segments.
+              <br> The main tasks performed include:
+              <br> - Software/Server Logic Access Management Assessment
+              <br>- Process Mapping and Improvement
+              <br> - Software Change Management Audit</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="wrapper-columns">
-      <div class="col-md-12">
-        <h4 id="experience">Experience</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      </div>
-    </div>
   </div>
   </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <!--   <script>
-    $( window ).resize(function() {
-  if($(window).width() <=1205) $('.button-wrapper').addClass("btn-group-vertical");
-  else if($(window).width() >=1206) $('.button-wrapper').removeClass("btn-group-vertical");
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
   });
-  </script> -->
+});
+</script>
 </body>
 
 </html>
