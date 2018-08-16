@@ -16,13 +16,13 @@ body {
 
 .parallax {
   /*background: url('design3.png') no-repeat fixed;*/
-  background-position: center center;
+/*  background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   min-height: 700px;
-  background-color: white;
+  background-color: white;*/
 }
 
 
@@ -292,7 +292,7 @@ li {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  padding: 0;
+  padding: 0px;
   flex-wrap: wrap;
 }
 
@@ -307,7 +307,7 @@ li {
     justify-content: center;
   }
   #bootstrap-override {
-    -ms-flex: 0;
+    -ms-flex: 0px;
     flex: auto;
     max-width: fit-content;
     width: auto;
