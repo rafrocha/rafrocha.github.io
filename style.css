@@ -31,12 +31,17 @@ body {
 }
 
 .wrapper {
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-right: 70px;
+  padding-left: 70px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+#bootstrap-override{
+  padding-bottom:0px;
+  max-width: fit-content;
 }
 
 .name-title {
@@ -50,8 +55,8 @@ body {
 
 img.curve {
   -webkit-shape-outside: url(https://media.licdn.com/dms/image/C5603AQE5IRiFUG6Gyg/profile-displayphoto-shrink_100_100/0?e=1539216000&v=beta&t=u3j1suZySxf0iyBr84teNZsHp7wBBsyFNvA-L--6BPg);
-  border-radius: 50%;
-  width: 220px;
+  /*  border-radius: 50%;
+*/  width: 220px;
   height: 220px;
   float: left;
   border: 5px;
@@ -123,7 +128,12 @@ img.curve {
 }
 
 a {
-  color: black;
+  color: white;
+}
+
+a:hover{
+  color:white;
+  text-decoration:none;
 }
 
 p {
@@ -278,6 +288,7 @@ li {
     flex: auto;
     max-width: fit-content;
     width: auto;
+    padding:0px;
   }
   #collapse-linkedin {
     margin-left: 0px;
