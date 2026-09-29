@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafael Rocha — Senior Frontend Engineer</title>
+<meta name="description" content="Rafael Rocha is a Senior Frontend Engineer at Amazon in Seattle, shipping AI agents and the UIs they live in.">
+<style>
+  :root {
+    --bg: #0b0d10;
+    --card: #111419;
+    --ink: #eef1f4;
+    --muted: #9aa3ad;
+    --faint: #6b7480;
+    --accent: #d7f75b;
+    --line: rgba(255, 255, 255, 0.09);
+    --radius: 14px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+                 Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; position: relative; }
+  ::selection { background: var(--accent); color: #0b0d10; }
+
+  /* Nav */
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 0;
+  }
+  .logo { font-weight: 800; letter-spacing: -0.02em; font-size: 18px; text-decoration: none; color: var(--ink); }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 26px; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero { padding: 96px 0 72px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+    border: 1px solid rgba(215, 247, 91, 0.3);
+    padding: 7px 14px; border-radius: 999px; margin-bottom: 28px;
+  }
+  .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+  h1 {
+    font-size: clamp(44px, 8vw, 84px);
+    font-weight: 800; letter-spacing: -0.04em; line-height: 1.02;
+    margin-bottom: 18px;
+  }
+  h1 .accent { color: var(--accent); }
+  .tagline {
+    font-size: clamp(19px, 3vw, 26px); font-weight: 500;
+    color: var(--muted); letter-spacing: -0.01em;
+    max-width: 620px; margin-bottom: 36px;
+  }
+  .tagline strong { color: var(--ink); font-weight: 650; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 26px; border-radius: 999px;
+    font-size: 15px; font-weight: 650; text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.2s, color 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #0b0d10; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(215, 247, 91, 0.35); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Sections */
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  .sec-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--faint); margin-bottom: 8px;
+  }
+  .sec-label span { color: var(--accent); }
+  h2 { font-size: clamp(28px, 4.5vw, 40px); font-weight: 750; letter-spacing: -0.03em; margin-bottom: 24px; }
+  .about p { color: var(--muted); font-size: 17px; max-width: 640px; margin-bottom: 18px; }
+  .about p strong { color: var(--ink); font-weight: 650; }
+
+  /* Experience */
+  .job {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 28px; margin-bottom: 16px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .job:hover { border-color: rgba(215, 247, 91, 0.35); transform: translateY(-2px); }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .job-role { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+  .job-co { color: var(--accent); font-weight: 650; font-size: 15px; }
+  .job-dates { color: var(--faint); font-size: 13.5px; font-weight: 500; white-space: nowrap; }
+  .job ul { list-style: none; margin-top: 12px; }
+  .job li { color: var(--muted); font-size: 15.5px; padding-left: 22px; position: relative; margin-bottom: 8px; }
+  .job li::before { content: "▸"; position: absolute; left: 2px; color: var(--accent); font-weight: 700; }
+
+  /* Skills */
+  .skill-group { margin-bottom: 26px; }
+  .skill-group h3 { font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-bottom: 12px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill {
+    font-size: 14px; font-weight: 550; color: var(--ink);
+    background: var(--card); border: 1px solid var(--line);
+    padding: 8px 16px; border-radius: 999px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .pill:hover { border-color: var(--accent); color: var(--accent); }
+  .pill.hot { border-color: rgba(215, 247, 91, 0.45); color: var(--accent); }
+
+  /* Contact */
+  .contact-card {
+    background: linear-gradient(135deg, #141a12 0%, var(--card) 60%);
+    border: 1px solid rgba(215, 247, 91, 0.25);
+    border-radius: 20px; padding: 48px 40px; text-align: center;
+  }
+  .contact-card h2 { margin-bottom: 12px; }
+  .contact-card p { color: var(--muted); font-size: 16px; max-width: 480px; margin: 0 auto 28px; }
+  .contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+  .contact-links a {
+    color: var(--muted); text-decoration: none; font-size: 14.5px; font-weight: 600;
+    border: 1px solid var(--line); padding: 10px 20px; border-radius: 999px;
+    transition: all 0.2s;
+  }
+  .contact-links a:hover { color: #0b0d10; background: var(--accent); border-color: var(--accent); }
+  .phone { color: var(--faint); font-size: 14px; margin-top: 18px; }
+
+  footer {
+    padding: 40px 0 48px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--faint); font-size: 13.5px; flex-wrap: wrap; gap: 8px;
+  }
+  footer .plain { color: var(--muted); }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .hero { padding: 64px 0 52px; }
+    .contact-card { padding: 36px 24px; }
+    .job-head { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="logo" href="#top">raf<span>rocha</span>.com</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="eyebrow"><span class="dot"></span>Seattle, WA · Open to interesting conversations</div>
+    <h1>Rafael Rocha<span class="accent">.</span></h1>
+    <p class="tagline"><strong>Senior Frontend Engineer at Amazon.</strong> Shipping AI agents and the UIs they live in.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/rafrocha" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/rafrocha" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <section class="about reveal" id="about">
+    <div class="sec-label"><span>01</span> · About</div>
+    <h2>Building digital experiences that hold up.</h2>
+    <p>
+      I'm a Brazilian Canadian engineer in Seattle with 8+ years turning complex
+      problems into fast, accessible interfaces. At <strong>Amazon</strong> I lead
+      frontend for internal HR and compensation platforms, own an organization-wide
+      design system library, and pioneer <strong>AI-enhanced engineering practices</strong>
+      across my team.
+    </p>
+    <p>
+      My focus is the unglamorous stuff that makes products feel effortless:
+      performance budgets, component architecture, and accessibility done right.
+      Outside of work you'll find me gaming, exploring new places, or attempting
+      to cook (emphasis on attempting).
+    </p>
+  </section>
+
+  <section class="reveal" id="experience">
+    <div class="sec-label"><span>02</span> · Experience</div>
+    <h2>Where I've worked.</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-role">Senior Frontend Engineer</div>
+          <div class="job-co">@ Amazon</div>
+        </div>
+        <div class="job-dates">Aug 2021 — Present</div>
+      </div>
+      <ul>
+        <li>Lead frontend engineer for internal compensation and HR platforms used across the company</li>
+        <li>Own the organization-wide design system library: components, tokens, docs, adoption</li>
+        <li>Pioneer AI engineering practices: agent-assisted development, reusable skills, curated docs</li>
+        <li>Drive performance and accessibility (WCAG 2.1 AA) as non-negotiable defaults</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-role">Software Engineer</div>
+          <div class="job-co">@ Calabrio</div>
+        </div>
+        <div class="job-dates">Sep 2019 — Aug 2021</div>
+      </div>
+      <ul>
+        <li>Optimized React components, cutting request times by ~30%</li>
+        <li>Migrated legacy codebases to React and Redux</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-role">Software Developer</div>
+          <div class="job-co">@ Agreement Express</div>
+        </div>
+        <div class="job-dates">Sep 2018 — Sep 2019</div>
+      </div>
+      <ul>
+        <li>Built financial services interfaces for enterprise clients</li>
+        <li>Developed dynamic merchant analysis scorecards</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="reveal" id="skills">
+    <div class="sec-label"><span>03</span> · Skills</div>
+    <h2>What I work with.</h2>
+
+    <div class="skill-group">
+      <h3>Current focus</h3>
+      <div class="pills">
+        <span class="pill hot">AI Agents</span>
+        <span class="pill hot">LLM Application Development</span>
+        <span class="pill hot">Prompt Engineering</span>
+        <span class="pill hot">Design Systems</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Frontend</h3>
+      <div class="pills">
+        <span class="pill">React</span>
+        <span class="pill">TypeScript</span>
+        <span class="pill">JavaScript (ES6+)</span>
+        <span class="pill">HTML5</span>
+        <span class="pill">CSS3</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Engineering</h3>
+      <div class="pills">
+        <span class="pill">Web Performance</span>
+        <span class="pill">Accessibility (WCAG)</span>
+        <span class="pill">Component Architecture</span>
+        <span class="pill">Technical Leadership</span>
+        <span class="pill">Mentoring</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Tooling &amp; Cloud</h3>
+      <div class="pills">
+        <span class="pill">Vite</span>
+        <span class="pill">Storybook</span>
+        <span class="pill">Vitest</span>
+        <span class="pill">Cypress</span>
+        <span class="pill">CI/CD</span>
+        <span class="pill">AWS CDK</span>
+        <span class="pill">S3</span>
+        <span class="pill">Lambda</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal" id="contact">
+    <div class="contact-card">
+      <div class="sec-label"><span>04</span> · Contact</div>
+      <h2>Let's connect.</h2>
+      <p>Always open to talking shop: frontend architecture, AI tooling, design systems, or what's next.</p>
+      <div class="cta-row" style="justify-content: center;">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/rafrocha" target="_blank" rel="noopener">Message me on LinkedIn</a>
+      </div>
+      <div class="contact-links">
+        <a href="https://github.com/rafrocha" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/rafrocha" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="phone">Seattle, WA · (206) 939-9836</div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="year">2026</span> Rafael Rocha</span>
+    <span class="plain">Plain HTML. No frameworks. No subscriptions.</span>
+  </footer>
+
+</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
